@@ -3,8 +3,9 @@ export type Project = {
   title: string;
   year: number;
   tags: string[];
-  cover: string;   // /archivo-en-public.jpg
-  slug: string;    // ruta interna /projects/slug
-  repo?: string;   // URL GitHub opcional
+  cover: string;   // /archivo en public (jpg/png/svg)
+  slug: string;    // /projects/slug
+  repo?: string;   // GitHub opcional
+  live?: string;   // URL deploy (producción)
   description?: string;
 };

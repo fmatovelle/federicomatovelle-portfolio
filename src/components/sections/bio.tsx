@@ -18,13 +18,13 @@ export default function Bio() {
             My work blends with my Graphic Designer and 3D to deliver creative websites, professional looking reactive experiences.
           </p>
           <p className="mt-4">
-            Selected clients / stages: Your Clients Here · Festival A · Club B · Brand C.
+            Selected clients
           </p>
         </div>
         <div className="space-y-3 text-xs text-white/60">
           <InfoRow label="BASE" value="Barcelona, Spain" />
           <InfoRow label="AVAILABLE" value="Worldwide" />
-          <InfoRow label="ROLES" value="Full Stack Developer · VJ · 3D & Graphic Design" />
+          <InfoRow label="ROLES" value="Full Stack Developer · Graphic Design · 3D & VJ " />
         </div>
       </div>
     </section>

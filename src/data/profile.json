@@ -1,0 +1,125 @@
+{
+  "site": {
+    "name": "Federico Matovelle",
+    "tagline": "Front-end Developer · React/Next.js",
+    "roles": [
+      "Front-end",
+      "React/Next.js",
+      "UI/UX"
+    ],
+    "instagram": "https://www.instagram.com/federico.matovelle",
+    "email": "fmatovelle1@gmail.com"
+  },
+  "video_url": "https://www.youtube-nocookie.com/embed/u4xWH7tjCLM?rel=0&modestbranding=1",
+  "projects": [
+    {
+      "id": "p1",
+      "title": "Star Wars Blog",
+      "tags": [
+        "React",
+        "Bootstrap",
+        "API REST",
+        "Front-end"
+      ],
+      "cover": "/projects/star-wars-blog.jpg",
+      "year": 2023,
+      "slug": "star-wars-blog",
+      "repo": "https://github.com/fmatovelle/StarWarsBlog",
+      "description": "Blog interactivo que consume una API pública de Star Wars y permite favoritos."
+    },
+    {
+      "id": "p2",
+      "title": "Rural Experience",
+      "tags": [
+        "React",
+        "Flask",
+        "API REST",
+        "Full-stack"
+      ],
+      "cover": "/projects/rural-experience.jpg",
+      "year": 2023,
+      "slug": "rural-experience",
+      "repo": "https://github.com/fmatovelle/RuralExperience",
+      "description": "Plataforma para descubrir experiencias turísticas en entornos rurales."
+    },
+    {
+      "id": "p3",
+      "title": "Bubi Crochet",
+      "tags": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Static Site"
+      ],
+      "cover": "/projects/bubi-crochet.jpg",
+      "year": 2023,
+      "slug": "bubi-crochet",
+      "repo": "https://github.com/fmatovelle/BubiCrochet",
+      "description": "Sitio web para la marca de artesanías Bubi Crochet."
+    },
+    {
+      "id": "p4",
+      "title": "Web Template 2",
+      "tags": [
+        "HTML5",
+        "CSS3",
+        "Bootstrap",
+        "Responsive"
+      ],
+      "cover": "/projects/web-template-2.jpg",
+      "year": 2022,
+      "slug": "web-template-2",
+      "repo": "https://github.com/fmatovelle/webtemplate2",
+      "description": "Plantilla base moderna para sitios web con diseño adaptable."
+    },
+    {
+      "id": "p5",
+      "title": "MingaSEO",
+      "tags": [
+        "WordPress",
+        "SEO",
+        "Branding",
+        "Copywriting"
+      ],
+      "cover": "/projects/minga-seo.jpg",
+      "year": 2025,
+      "slug": "minga-seo",
+      "live": "https://www.mingaseo.com/",
+      "description": "Sitio corporativo para servicios de SEO en Ecuador: servicios, proyectos y contacto. Desarrollado con WordPress y optimizado on-page."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "https://picsum.photos/seed/gal1/1000/1000",
+      "alt": "Gallery 1"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal2/1000/1000",
+      "alt": "Gallery 2"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal3/1000/1000",
+      "alt": "Gallery 3"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal4/1000/1000",
+      "alt": "Gallery 4"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal5/1000/1000",
+      "alt": "Gallery 5"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal6/1000/1000",
+      "alt": "Gallery 6"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal7/1000/1000",
+      "alt": "Gallery 7"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal8/1000/1000",
+      "alt": "Gallery 8"
+    }
+  ]
+}
