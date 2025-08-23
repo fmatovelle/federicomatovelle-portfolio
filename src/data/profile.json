@@ -1,9 +1,11 @@
 {
   "site": {
+    "owner": "Federico Matovelle",
     "name": "Federico Matovelle",
-    "tagline": "Front-end Developer · React/Next.js",
+    "tagline": "Full-Stack Developer · React/Next.js",
     "roles": [
       "Front-end",
+      "Back-end",
       "React/Next.js",
       "UI/UX"
     ],
@@ -78,8 +80,7 @@
       "tags": [
         "WordPress",
         "SEO",
-        "Branding",
-        "Copywriting"
+        "Branding"
       ],
       "cover": "/projects/minga-seo.jpg",
       "year": 2025,
