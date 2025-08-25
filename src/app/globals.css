@@ -3,3 +3,5 @@
 /* extras opcionales */
 ::selection { background: white; color: black; }
 html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html { scroll-behavior: smooth; }
+

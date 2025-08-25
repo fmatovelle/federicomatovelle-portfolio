@@ -1,14 +1,29 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { Mail, ArrowUpRight, Instagram, Loader2, Check } from 'lucide-react';
+import {
+  Mail,
+  ArrowUpRight,
+  Instagram,
+  Loader2,
+  Check,
+  MessageCircle,
+} from 'lucide-react';
 import { SITE } from '@/lib/content';
 
 const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID || '';
 
 export default function Contact() {
-  const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [state, setState] =
+    useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  // Construye link de WhatsApp si está configurado en el JSON
+  const whatsappHref = SITE?.whatsapp
+    ? `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(
+        'Hola Federico, vi tu portafolio y me interesa hablar sobre un proyecto.'
+      )}`
+    : null;
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -33,7 +48,7 @@ export default function Contact() {
         setErrorMsg(j?.error ?? 'No se pudo enviar el mensaje.');
         setState('error');
       }
-    } catch (err) {
+    } catch {
       setErrorMsg('Error de red. Intenta de nuevo.');
       setState('error');
     }
@@ -45,7 +60,8 @@ export default function Contact() {
 
       {FORMSPREE_ID === '' && (
         <p className="mb-4 text-xs text-yellow-400/90">
-          ⚠️ Falta configurar <code>NEXT_PUBLIC_FORMSPREE_ID</code> en <code>.env.local</code>.
+          ⚠️ Falta configurar{' '}
+          <code>NEXT_PUBLIC_FORMSPREE_ID</code> en <code>.env.local</code>.
         </p>
       )}
 
@@ -56,30 +72,38 @@ export default function Contact() {
           className="group border border-white/10 rounded-2xl p-5 flex flex-col gap-4"
         >
           <div className="grid gap-2">
-            <label className="text-xs text-white/60" htmlFor="name">Nombre</label>
+            <label className="text-xs text-white/60" htmlFor="name">
+              Nombre
+            </label>
             <input
               id="name"
               name="name"
               required
               placeholder="Tu nombre"
+              autoComplete="name"
               className="rounded-xl border border-white/15 bg-transparent px-3 py-2 text-sm outline-none placeholder-white/40 focus:border-white/30"
             />
           </div>
 
           <div className="grid gap-2">
-            <label className="text-xs text-white/60" htmlFor="email">Email</label>
+            <label className="text-xs text-white/60" htmlFor="email">
+              Email
+            </label>
             <input
               id="email"
               name="email"
               type="email"
               required
               placeholder="tucorreo@ejemplo.com"
+              autoComplete="email"
               className="rounded-xl border border-white/15 bg-transparent px-3 py-2 text-sm outline-none placeholder-white/40 focus:border-white/30"
             />
           </div>
 
           <div className="grid gap-2">
-            <label className="text-xs text-white/60" htmlFor="message">Mensaje</label>
+            <label className="text-xs text-white/60" htmlFor="message">
+              Mensaje
+            </label>
             <textarea
               id="message"
               name="message"
@@ -90,10 +114,20 @@ export default function Contact() {
           </div>
 
           {/* Honeypot anti-spam */}
-          <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
+          <input
+            type="text"
+            name="_gotcha"
+            className="hidden"
+            tabIndex={-1}
+            autoComplete="off"
+          />
 
           {/* Metadata opcional */}
-          <input type="hidden" name="_subject" value="Nuevo mensaje desde el portfolio" />
+          <input
+            type="hidden"
+            name="_subject"
+            value="Nuevo mensaje desde el portfolio"
+          />
 
           <div className="flex items-center gap-3">
             <button
@@ -146,6 +180,22 @@ export default function Contact() {
             </div>
             <ArrowUpRight className="w-5 h-5 opacity-70 group-hover:opacity-100" />
           </a>
+
+          {whatsappHref && (
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group border border-white/10 rounded-2xl p-5 flex items-center justify-between hover:border-white/30"
+              aria-label="Escríbeme por WhatsApp"
+            >
+              <div className="flex items-center gap-2">
+                <MessageCircle className="w-4 h-4" />
+                <p className="text-sm font-medium">WhatsApp</p>
+              </div>
+              <ArrowUpRight className="w-5 h-5 opacity-70 group-hover:opacity-100" />
+            </a>
+          )}
         </div>
       </div>
     </section>

@@ -10,7 +10,7 @@ export default function Page() {
     <div>
       <Hero />
       <Projects />
-      <Gallery />
+      <Gallery /> 
       <Video />
       <Bio />
       <Contact />
