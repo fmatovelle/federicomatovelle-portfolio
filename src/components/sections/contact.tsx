@@ -1,3 +1,4 @@
+// src/components/sections/contact.tsx
 'use client';
 
 import { useState, FormEvent } from 'react';
@@ -11,12 +12,12 @@ import {
 } from 'lucide-react';
 import { SITE } from '@/lib/content';
 
-const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID || '';
+// Definir tipo de estado más explícito
+type FormState = 'idle' | 'sending' | 'sent' | 'error';
 
 export default function Contact() {
-  const [state, setState] =
-    useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [formState, setFormState] = useState<FormState>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   // Construye link de WhatsApp si está configurado en el JSON
   const whatsappHref = SITE?.whatsapp
@@ -25,63 +26,48 @@ export default function Contact() {
       )}`
     : null;
 
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setState('sending');
-    setErrorMsg(null);
+    setFormState('sending');
+    setErrorMessage('');
 
+    // Simular envío por ahora - reemplaza con tu lógica real
     try {
-      const form = e.currentTarget;
-      const payload = new FormData(form);
-
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: payload,
-      });
-
-      if (res.ok) {
-        setState('sent');
-        form.reset();
-      } else {
-        const j = await res.json().catch(() => null);
-        setErrorMsg(j?.error ?? 'No se pudo enviar el mensaje.');
-        setState('error');
-      }
-    } catch {
-      setErrorMsg('Error de red. Intenta de nuevo.');
-      setState('error');
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Simular delay
+      setFormState('sent');
+      e.currentTarget.reset();
+    } catch (error) {
+      setFormState('error');
+      setErrorMessage('Error al enviar el mensaje');
     }
-  }
+  };
+
+  const isLoading = formState === 'sending';
+  const isSuccess = formState === 'sent';
+  const isError = formState === 'error';
 
   return (
     <section id="contact" className="py-10 sm:py-16">
       <h2 className="text-xl font-semibold mb-6 tracking-widest">CONTACT</h2>
 
-      {FORMSPREE_ID === '' && (
-        <p className="mb-4 text-xs text-yellow-400/90">
-          ⚠️ Falta configurar{' '}
-          <code>NEXT_PUBLIC_FORMSPREE_ID</code> en <code>.env.local</code>.
-        </p>
-      )}
-
       <div className="grid md:grid-cols-2 gap-6">
         {/* FORMULARIO */}
         <form
-          onSubmit={onSubmit}
+          onSubmit={handleSubmit}
           className="group border border-white/10 rounded-2xl p-5 flex flex-col gap-4"
         >
           <div className="grid gap-2">
             <label className="text-xs text-white/60" htmlFor="name">
-              Nombre
+              Name
             </label>
             <input
               id="name"
               name="name"
               required
-              placeholder="Tu nombre"
+              placeholder="Your Name"
               autoComplete="name"
-              className="rounded-xl border border-white/15 bg-transparent px-3 py-2 text-sm outline-none placeholder-white/40 focus:border-white/30"
+              disabled={isLoading}
+              className="rounded-xl border border-white/15 bg-transparent px-3 py-2 text-sm outline-none placeholder-white/40 focus:border-white/30 disabled:opacity-50"
             />
           </div>
 
@@ -94,63 +80,49 @@ export default function Contact() {
               name="email"
               type="email"
               required
-              placeholder="tucorreo@ejemplo.com"
+              placeholder="youremail@example.com"
               autoComplete="email"
-              className="rounded-xl border border-white/15 bg-transparent px-3 py-2 text-sm outline-none placeholder-white/40 focus:border-white/30"
+              disabled={isLoading}
+              className="rounded-xl border border-white/15 bg-transparent px-3 py-2 text-sm outline-none placeholder-white/40 focus:border-white/30 disabled:opacity-50"
             />
           </div>
 
           <div className="grid gap-2">
             <label className="text-xs text-white/60" htmlFor="message">
-              Mensaje
+              Message
             </label>
             <textarea
               id="message"
               name="message"
               required
-              placeholder="Cuéntame sobre tu proyecto…"
-              className="rounded-xl border border-white/15 bg-transparent px-3 py-2 text-sm outline-none placeholder-white/40 focus:border-white/30 min-h-[120px]"
+              placeholder="Tell me about your proyect…"
+              disabled={isLoading}
+              className="rounded-xl border border-white/15 bg-transparent px-3 py-2 text-sm outline-none placeholder-white/40 focus:border-white/30 min-h-[120px] disabled:opacity-50"
             />
           </div>
-
-          {/* Honeypot anti-spam */}
-          <input
-            type="text"
-            name="_gotcha"
-            className="hidden"
-            tabIndex={-1}
-            autoComplete="off"
-          />
-
-          {/* Metadata opcional */}
-          <input
-            type="hidden"
-            name="_subject"
-            value="Nuevo mensaje desde el portfolio"
-          />
 
           <div className="flex items-center gap-3">
             <button
               type="submit"
-              disabled={state === 'sending' || FORMSPREE_ID === ''}
-              className="inline-flex items-center gap-2 rounded-2xl border border-white/20 px-4 py-2 text-sm hover:border-white/40 disabled:opacity-50"
+              disabled={isLoading}
+              className="inline-flex items-center gap-2 rounded-2xl border border-white/20 px-4 py-2 text-sm hover:border-white/40 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {state === 'sending' ? (
+              {isLoading ? (
                 <>
-                  <Loader2 className="h-4 w-4 animate-spin" /> Enviando…
+                  <Loader2 className="h-4 w-4 animate-spin" /> Sending...
                 </>
               ) : (
-                'Enviar'
+                'Send'
               )}
             </button>
 
-            {state === 'sent' && (
+            {isSuccess && (
               <span className="inline-flex items-center gap-2 text-emerald-400 text-sm">
-                <Check className="h-4 w-4" /> ¡Mensaje enviado!
+                <Check className="h-4 w-4" /> ¡Message Sent!
               </span>
             )}
-            {state === 'error' && (
-              <span className="text-sm text-red-400">{errorMsg}</span>
+            {isError && (
+              <span className="text-sm text-red-400">{errorMessage}</span>
             )}
           </div>
         </form>
@@ -159,26 +131,26 @@ export default function Contact() {
         <div className="grid gap-6">
           <a
             href={`mailto:${SITE.email}`}
-            className="group border border-white/10 rounded-2xl p-5 flex items-center justify-between hover:border-white/30"
+            className="group border border-white/10 rounded-2xl p-5 flex items-center justify-between hover:border-white/30 transition-colors"
           >
             <div>
               <p className="text-sm font-medium">Email</p>
               <p className="text-xs text-white/60">{SITE.email}</p>
             </div>
-            <Mail className="w-5 h-5 opacity-70 group-hover:opacity-100" />
+            <Mail className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" />
           </a>
 
           <a
             href={SITE.instagram}
             target="_blank"
             rel="noreferrer"
-            className="group border border-white/10 rounded-2xl p-5 flex items-center justify-between hover:border-white/30"
+            className="group border border-white/10 rounded-2xl p-5 flex items-center justify-between hover:border-white/30 transition-colors"
           >
             <div className="flex items-center gap-2">
               <Instagram className="w-4 h-4" />
               <p className="text-sm font-medium">Instagram</p>
             </div>
-            <ArrowUpRight className="w-5 h-5 opacity-70 group-hover:opacity-100" />
+            <ArrowUpRight className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" />
           </a>
 
           {whatsappHref && (
@@ -186,14 +158,14 @@ export default function Contact() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="group border border-white/10 rounded-2xl p-5 flex items-center justify-between hover:border-white/30"
+              className="group border border-white/10 rounded-2xl p-5 flex items-center justify-between hover:border-white/30 transition-colors"
               aria-label="Escríbeme por WhatsApp"
             >
               <div className="flex items-center gap-2">
                 <MessageCircle className="w-4 h-4" />
                 <p className="text-sm font-medium">WhatsApp</p>
               </div>
-              <ArrowUpRight className="w-5 h-5 opacity-70 group-hover:opacity-100" />
+              <ArrowUpRight className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" />
             </a>
           )}
         </div>

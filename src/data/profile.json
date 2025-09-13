@@ -25,7 +25,7 @@
       "year": 2023,
       "slug": "star-wars-blog",
       "repo": "https://github.com/fmatovelle/StarWarsBlog",
-      "description": "Blog interactivo que consume una API pública de Star Wars y permite favoritos."
+      "description": "Interactive blog that consumes a public Star Wars API and allows favorites."
     },
     {
       "id": "p2",
@@ -35,7 +35,7 @@
       "year": 2023,
       "slug": "rural-experience",
       "repo": "https://github.com/fmatovelle/RuralExperience",
-      "description": "Plataforma para descubrir experiencias turísticas en entornos rurales."
+      "description": "Platform for discovering tourist experiences in rural environments."
     },
     {
       "id": "p3",
@@ -45,7 +45,7 @@
       "year": 2023,
       "slug": "bubi-crochet",
       "repo": "https://github.com/fmatovelle/BubiCrochet",
-      "description": "Sitio web para la marca de artesanías Bubi Crochet."
+      "description": "Website for the Bubi Crochet crafts brand."
     },
     {
       "id": "p4",
@@ -55,7 +55,8 @@
       "year": 2022,
       "slug": "web-template-2",
       "repo": "https://github.com/fmatovelle/webtemplate2",
-      "description": "Plantilla base moderna para sitios web con diseño adaptable."
+      "live": "https://webtemplate-2-fm.web.app",
+      "description": "Modern base template for websites with responsive design."
     },
     {
       "id": "p5",
@@ -65,7 +66,7 @@
       "year": 2025,
       "slug": "minga-seo",
       "live": "https://www.mingaseo.com/",
-      "description": "Sitio corporativo para servicios de SEO en Ecuador: servicios, proyectos y contacto. Desarrollado con WordPress y optimizado on-page."
+      "description": "Corporate website for SEO services in Ecuador: services, projects, and contact information. Powered by WordPress and optimized on-page.."
     },
     {
       "id": "p6",
@@ -75,7 +76,17 @@
       "year": 2025,
       "slug": "web-template-3",
       "repo": "https://github.com/fmatovelle/webtemplate-3",
-      "description": "Plantilla moderna y responsive para restaurantes/negocios, con hero fuerte, CTA, y estructura limpia para lanzar landing pages rápido."
+      "description": "Modern, responsive restaurant/business template with a strong hero, CTA, and clean structure to launch landing pages quickly.."
+    },
+    {
+      "id": "p7",
+      "title": "ChildSitter BCN",
+      "tags": ["React", "Firebase", "Service Platform", "Frontend"],
+      "cover": "/projects/childsitters_bcn.jpg",
+      "year": 2025,
+      "slug": "childsitter-bcn",
+      "live": "https://childsitterbcn-fm.web.app",
+      "description": "Childcare platform in Barcelona connecting families with professional caregivers."
     }
   ],
   "gallery": [

@@ -10,7 +10,13 @@
     "format": "prettier --write .",
     "check": "prettier --check . && eslint . --ext .ts,.tsx",
     "lintfix": "eslint . --ext .ts,.tsx --fix",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    
+    "deploy": "npm run deploy:clean && npm run deploy:build && npm run deploy:firebase",
+    "deploy:clean": "rm -rf .next out",
+    "deploy:build": "npm run build",
+    "deploy:firebase": "firebase deploy --only hosting --force",
+    "deploy:preview": "npm run deploy:clean && npm run deploy:build && firebase hosting:channel:deploy preview"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",

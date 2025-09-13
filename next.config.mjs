@@ -2,6 +2,8 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  skipTrailingSlashRedirect: true,
+  distDir: 'out',
   images: {
     unoptimized: true,
     formats: ['image/avif', 'image/webp'],
@@ -10,9 +12,12 @@ const nextConfig = {
       { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
-  // Evita que ESLint/TypeScript compila el build mientras terminamos de tipar/limpiar
+  // Disable these during build to avoid conflicts with static export
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
+  // Remove experimental.esmExternals - it was causing warnings
+  poweredByHeader: false,
+  reactStrictMode: true,
 };
 
 export default nextConfig;

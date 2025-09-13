@@ -1,3 +1,4 @@
+// src/components/sections/bio.tsx
 import Image from 'next/image';
 import { SITE } from '@/lib/content';
 
@@ -51,7 +52,7 @@ export default function Bio() {
         <div className="space-y-3 text-xs text-white/60 order-3">
           <InfoRow label="BASE" value="Barcelona, Spain" />
           <InfoRow label="AVAILABLE" value="Worldwide" />
-          <InfoRow label="ROLES" value="Full Stack Developer · Graphic Design · 3D & VJ" />
+          <InfoRow label="ROLES" value="Full Stack Developer · Graphic Design · 3D & VFX" />
         </div>
       </div>
     </section>

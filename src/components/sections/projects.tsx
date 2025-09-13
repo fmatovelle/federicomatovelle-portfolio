@@ -1,3 +1,4 @@
+// src/components/sections/projects.tsx
 'use client';
 
 import { useMemo, useState } from 'react';
@@ -6,6 +7,7 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import NeonBorder from '@/components/visual/neon-border';
 import { PROJECTS } from '@/lib/content';
+import { useLoading } from '@/context/loading-context';
 
 // Chip reutilizable
 function TagChip({
@@ -39,6 +41,9 @@ export default function Projects() {
   const [q, setQ] = useState(''); // query de búsqueda
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
   const [sort, setSort] = useState<'year-desc' | 'year-asc'>('year-desc');
+  
+  // Loading context - usar correctamente
+  const { isLoading, setLoading } = useLoading();
 
   // --- Tags únicos (ordenados) ---
   const allTags = useMemo(() => {
@@ -77,12 +82,16 @@ export default function Projects() {
   }, [q, activeTags, sort]);
 
   // helpers
-  const toggleTag = (t: string) =>
+  const toggleTag = (t: string) => {
+    setLoading(true); // Usar setLoading correctamente
     setActiveTags((prev) => {
       const next = new Set(prev);
       next.has(t) ? next.delete(t) : next.add(t);
       return next;
     });
+    // Simular delay de filtrado
+    setTimeout(() => setLoading(false), 300);
+  };
 
   const clearFilters = () => {
     setQ('');
@@ -101,22 +110,24 @@ export default function Projects() {
           <input
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Buscar por título, tag o descripción…"
-            className="w-full sm:max-w-md rounded-xl border border-white/15 bg-transparent px-3 py-2 text-sm outline-none placeholder-white/40 focus:border-white/30"
+            placeholder="Search by title, tag, or description…"
+            disabled={isLoading} // Usar isLoading como booleano
+            className="w-full sm:max-w-md rounded-xl border border-white/15 bg-transparent px-3 py-2 text-sm outline-none placeholder-white/40 focus:border-white/30 disabled:opacity-50"
           />
           <div className="flex items-center gap-2">
-            <label className="text-xs text-white/60">Orden:</label>
+            <label className="text-xs text-white/60">Order:</label>
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value as any)}
-              className="rounded-lg border border-white/15 bg-transparent px-2 py-1 text-xs"
+              disabled={isLoading}
+              className="rounded-lg border border-white/15 bg-transparent px-2 py-1 text-xs disabled:opacity-50"
             >
-              <option value="year-desc">Más nuevo</option>
-              <option value="year-asc">Más antiguo</option>
+              <option value="year-desc">Newest</option>
+              <option value="year-asc">Oldest</option>
             </select>
           </div>
           <div className="ml-auto text-xs text-white/60">
-            {filtered.length} resultado{filtered.length !== 1 ? 's' : ''}
+            {isLoading ? 'Filtrando...' : `${filtered.length} result${filtered.length !== 1 ? 's' : ''}`}
           </div>
         </div>
 
@@ -134,9 +145,10 @@ export default function Projects() {
             <button
               type="button"
               onClick={clearFilters}
-              className="ml-auto rounded-full border border-white/15 px-3 py-1 text-xs text-white/70 hover:border-white/30"
+              disabled={isLoading}
+              className="ml-auto rounded-full border border-white/15 px-3 py-1 text-xs text-white/70 hover:border-white/30 disabled:opacity-50"
             >
-              Limpiar filtros
+              Delete Filters
             </button>
           )}
         </div>

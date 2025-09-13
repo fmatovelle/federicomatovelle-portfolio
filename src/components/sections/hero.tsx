@@ -1,3 +1,4 @@
+// src/components/sections/hero.tsx
 'use client';
 import { motion } from 'framer-motion';
 import { SITE } from '@/lib/content';
