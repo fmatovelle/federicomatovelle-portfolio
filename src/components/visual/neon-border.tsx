@@ -1,4 +1,4 @@
-// Card border. With `spotlight`, the border and a soft inner glow light up
+// Card border. With `spotlight`, the border lights up
 // where the cursor is (the parent sets --cx/--cy via spotlightHandlers).
 import type { PointerEvent } from 'react';
 
@@ -8,9 +8,6 @@ export function spotlightHandlers() {
       const r = e.currentTarget.getBoundingClientRect();
       e.currentTarget.style.setProperty('--cx', `${e.clientX - r.left}px`);
       e.currentTarget.style.setProperty('--cy', `${e.clientY - r.top}px`);
-      // page-level position for the grid light around the hovered card
-      document.documentElement.style.setProperty('--mx', `${e.clientX}px`);
-      document.documentElement.style.setProperty('--my', `${e.clientY}px`);
     },
   };
 }
@@ -26,7 +23,6 @@ export default function NeonBorder({
     <>
       {spotlight && (
         <>
-          <span aria-hidden className="card-spotlight-fill pointer-events-none absolute inset-0 rounded-[1rem]" />
           <span aria-hidden className="card-spotlight pointer-events-none absolute inset-0 rounded-[1rem]" />
         </>
       )}
