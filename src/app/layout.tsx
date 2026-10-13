@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} bg-black text-zinc-100`}>
+      <body className={`${inter.className} bg-black text-zinc-100 overflow-x-clip`}>
         <LoadingProvider>
           <Header />
           <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

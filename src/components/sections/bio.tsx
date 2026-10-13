@@ -24,7 +24,7 @@ export default function Bio() {
           <div className="relative w-40 h-40 rounded-full overflow-hidden border border-white/10 mx-auto md:mx-0">
             <Image
               src={avatar}
-              alt={`Foto de ${SITE.owner ?? SITE.name ?? 'autor'}`}
+              alt={`Photo of ${SITE.owner ?? SITE.name}`}
               fill
               sizes="160px"
               className="object-cover"
@@ -41,17 +41,21 @@ export default function Bio() {
         {/* Columna 2: Tu texto */}
         <div className="md:col-span-2 text-sm leading-7 text-white/80 order-1 md:order-2">
           <p>
-            I am a Website Designer - Full-Stack Developer crafting websites with passion.
-            My work blends with my Graphic Designer and 3D to deliver creative websites, professional
-            looking reactive experiences.
+            I&apos;m a full-stack developer based in Barcelona. I build web and mobile products end
+            to end with React, Next.js and TypeScript on the frontend, and NestJS and Node.js on the
+            backend.
           </p>
-          <p className="mt-4">Selected clients</p>
+          <p className="mt-4">
+            Before code, I worked in graphic and 3D design, so I care about how a product looks and
+            feels as much as how it works. That mix lets me move comfortably between design and
+            engineering, and turn ideas into polished, fast interfaces.
+          </p>
         </div>
 
         {/* Columna 3: Datos rápidos */}
         <div className="space-y-3 text-xs text-white/60 order-3">
-          <InfoRow label="BASE" value="Barcelona, Spain" />
-          <InfoRow label="AVAILABLE" value="Worldwide" />
+          <InfoRow label="LOCATION" value="Barcelona, Spain" />
+          <InfoRow label="AVAILABLE" value="On-site · Remote" />
           <InfoRow label="ROLES" value="Full Stack Developer · Graphic Design · 3D & VFX" />
         </div>
       </div>
