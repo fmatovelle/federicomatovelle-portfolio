@@ -37,16 +37,16 @@ export default function Hero() {
         <div className="mt-2 flex flex-wrap items-center gap-3 text-sm">
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 font-medium text-black transition hover:bg-white/85"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-white/90 transition hover:border-white/40"
           >
             View projects
             <ArrowDown className="h-4 w-4" />
           </a>
-          <div className="inline-flex overflow-hidden rounded-full bg-white font-medium text-black">
+          <div className="inline-flex overflow-hidden rounded-full border border-white/20 text-white/90 transition hover:border-white/40">
             <a
               href="/cv/Federico-Matovelle-CV.pdf"
               download
-              className="inline-flex items-center gap-2 px-5 py-2.5 transition hover:bg-black/10"
+              className="inline-flex items-center gap-2 px-5 py-2.5 transition hover:bg-white/5"
             >
               <Download className="h-4 w-4" />
               Download CV
@@ -56,7 +56,7 @@ export default function Hero() {
               download
               title="Descargar CV en español"
               aria-label="Descargar CV en español"
-              className="inline-flex items-center border-l border-black/15 px-3.5 py-2.5 text-xs font-semibold tracking-wider text-black/60 transition hover:bg-black/10 hover:text-black"
+              className="inline-flex items-center border-l border-white/15 px-3.5 py-2.5 text-xs font-medium tracking-wider text-white/60 transition hover:bg-white/5 hover:text-white"
             >
               ES
             </a>
