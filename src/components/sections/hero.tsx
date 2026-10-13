@@ -42,11 +42,11 @@ export default function Hero() {
             View projects
             <ArrowDown className="h-4 w-4" />
           </a>
-          <div className="inline-flex overflow-hidden rounded-full border border-violet-400/40 bg-violet-500/10 text-white/90">
+          <div className="inline-flex overflow-hidden rounded-full bg-white font-medium text-black">
             <a
               href="/cv/Federico-Matovelle-CV.pdf"
               download
-              className="inline-flex items-center gap-2 px-5 py-2.5 transition hover:bg-violet-500/20"
+              className="inline-flex items-center gap-2 px-5 py-2.5 transition hover:bg-black/10"
             >
               <Download className="h-4 w-4" />
               Download CV
@@ -56,7 +56,7 @@ export default function Hero() {
               download
               title="Descargar CV en español"
               aria-label="Descargar CV en español"
-              className="inline-flex items-center border-l border-violet-400/30 px-3.5 py-2.5 text-xs font-medium tracking-wider text-white/70 transition hover:bg-violet-500/20 hover:text-white"
+              className="inline-flex items-center border-l border-black/15 px-3.5 py-2.5 text-xs font-semibold tracking-wider text-black/60 transition hover:bg-black/10 hover:text-black"
             >
               ES
             </a>
