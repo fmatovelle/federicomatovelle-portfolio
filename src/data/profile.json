@@ -36,22 +36,6 @@
       "description": "Vacation rental platform connecting travelers with unique rural accommodations in Spain, Portugal and France. React frontend with a Flask REST API."
     },
     {
-      "id": "p4",
-      "title": "Web Template 2",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "Bootstrap",
-        "Responsive"
-      ],
-      "cover": "/projects/web-template-2.jpg",
-      "year": 2022,
-      "slug": "web-template-2",
-      "repo": "https://github.com/fmatovelle/webtemplate2",
-      "live": "https://webtemplate-2-fm.web.app",
-      "description": "Modern base template for websites with responsive design."
-    },
-    {
       "id": "p5",
       "title": "MingaSEO",
       "tags": [
@@ -64,21 +48,6 @@
       "slug": "minga-seo",
       "live": "https://www.mingaseo.com/",
       "description": "Corporate website for an SEO agency in Ecuador, with services, projects and contact pages. Built on WordPress with on-page SEO optimization."
-    },
-    {
-      "id": "p6",
-      "title": "Web Template 3",
-      "tags": [
-        "HTML5",
-        "CSS3",
-        "Bootstrap",
-        "Responsive"
-      ],
-      "cover": "/projects/website_mockup.jpg",
-      "year": 2025,
-      "slug": "web-template-3",
-      "repo": "https://github.com/fmatovelle/webtemplate-3",
-      "description": "Modern, responsive restaurant/business template with a strong hero, CTA, and clean structure to launch landing pages quickly."
     },
     {
       "id": "p7",

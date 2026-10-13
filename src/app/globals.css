@@ -5,3 +5,57 @@
 html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 html { scroll-behavior: smooth; }
 
+
+/* ---------- Animated background ---------- */
+@keyframes drift-a {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-9vw, 12vh, 0) scale(1.12); }
+}
+@keyframes drift-b {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(12vw, -10vh, 0) scale(0.9); }
+}
+@keyframes drift-c {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  33% { transform: translate3d(-7vw, -8vh, 0); }
+  66% { transform: translate3d(6vw, 5vh, 0); }
+}
+.glow-drift-a { animation: drift-a 26s ease-in-out infinite; will-change: transform; }
+.glow-drift-b { animation: drift-b 32s ease-in-out infinite; will-change: transform; }
+.glow-drift-c { animation: drift-c 22s ease-in-out infinite; will-change: transform; }
+
+.site-bg .spotlight-layer { opacity: 0; transition: opacity 400ms ease; }
+.site-bg[data-spotlight='on'] .spotlight-layer { opacity: 1; }
+
+/* Card border glow that follows the cursor (see NeonBorder) */
+.card-spotlight {
+  opacity: 0;
+  transition: opacity 300ms ease;
+  padding: 1.5px;
+  background: radial-gradient(
+    380px circle at var(--cx, 50%) var(--cy, 50%),
+    rgba(196, 184, 255, 1),
+    rgba(127, 220, 255, 0.55) 35%,
+    transparent 70%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+.card-spotlight-fill {
+  opacity: 0;
+  transition: opacity 300ms ease;
+  background: radial-gradient(
+    420px circle at var(--cx, 50%) var(--cy, 50%),
+    rgba(140, 110, 255, 0.22),
+    transparent 60%
+  );
+}
+.group:hover .card-spotlight,
+.group:hover .card-spotlight-fill { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-drift-a, .glow-drift-b, .glow-drift-c { animation: none; }
+  .site-bg .spotlight-layer { display: none; }
+}
