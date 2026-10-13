@@ -6,23 +6,62 @@ html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 html { scroll-behavior: smooth; }
 
 
-/* ---------- Animated background ---------- */
+/* ---------- Animated background ----------
+   Each glow wanders along a soft elliptical loop at a constant pace
+   (linear timing, no pauses), so the motion is subtle but always visible. */
 @keyframes drift-a {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
-  50% { transform: translate3d(-14vw, 18vh, 0) scale(1.15); opacity: 0.8; }
+  0.0% { transform: translate3d(0.00vw, 0.00vh, 0) scale(1.000); }
+  8.33% { transform: translate3d(-0.94vw, 4.00vh, 0) scale(1.069); }
+  16.67% { transform: translate3d(-3.50vw, 6.93vh, 0) scale(1.069); }
+  25.0% { transform: translate3d(-7.00vw, 8.00vh, 0) scale(1.000); }
+  33.33% { transform: translate3d(-10.50vw, 6.93vh, 0) scale(0.931); }
+  41.67% { transform: translate3d(-13.06vw, 4.00vh, 0) scale(0.931); }
+  50.0% { transform: translate3d(-14.00vw, 0.00vh, 0) scale(1.000); }
+  58.33% { transform: translate3d(-13.06vw, -4.00vh, 0) scale(1.069); }
+  66.67% { transform: translate3d(-10.50vw, -6.93vh, 0) scale(1.069); }
+  75.0% { transform: translate3d(-7.00vw, -8.00vh, 0) scale(1.000); }
+  83.33% { transform: translate3d(-3.50vw, -6.93vh, 0) scale(0.931); }
+  91.67% { transform: translate3d(-0.94vw, -4.00vh, 0) scale(0.931); }
+  100.0% { transform: translate3d(0.00vw, -0.00vh, 0) scale(1.000); }
 }
 @keyframes drift-b {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.8; }
-  50% { transform: translate3d(16vw, -14vh, 0) scale(1.1); opacity: 1; }
+  0.0% { transform: translate3d(0.00vw, 0.00vh, 0) scale(1.000); }
+  8.33% { transform: translate3d(4.00vw, -0.94vh, 0) scale(1.069); }
+  16.67% { transform: translate3d(6.93vw, -3.50vh, 0) scale(1.069); }
+  25.0% { transform: translate3d(8.00vw, -7.00vh, 0) scale(1.000); }
+  33.33% { transform: translate3d(6.93vw, -10.50vh, 0) scale(0.931); }
+  41.67% { transform: translate3d(4.00vw, -13.06vh, 0) scale(0.931); }
+  50.0% { transform: translate3d(0.00vw, -14.00vh, 0) scale(1.000); }
+  58.33% { transform: translate3d(-4.00vw, -13.06vh, 0) scale(1.069); }
+  66.67% { transform: translate3d(-6.93vw, -10.50vh, 0) scale(1.069); }
+  75.0% { transform: translate3d(-8.00vw, -7.00vh, 0) scale(1.000); }
+  83.33% { transform: translate3d(-6.93vw, -3.50vh, 0) scale(0.931); }
+  91.67% { transform: translate3d(-4.00vw, -0.94vh, 0) scale(0.931); }
+  100.0% { transform: translate3d(-0.00vw, 0.00vh, 0) scale(1.000); }
 }
 @keyframes drift-c {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  33% { transform: translate3d(-12vw, -10vh, 0) scale(1.12); }
-  66% { transform: translate3d(9vw, 8vh, 0) scale(0.94); }
+  0.0% { transform: translate3d(0.00vw, 0.00vh, 0) scale(1.000); }
+  8.33% { transform: translate3d(0.80vw, -3.00vh, 0) scale(1.052); }
+  16.67% { transform: translate3d(3.00vw, -5.20vh, 0) scale(1.052); }
+  25.0% { transform: translate3d(6.00vw, -6.00vh, 0) scale(1.000); }
+  33.33% { transform: translate3d(9.00vw, -5.20vh, 0) scale(0.948); }
+  41.67% { transform: translate3d(11.20vw, -3.00vh, 0) scale(0.948); }
+  50.0% { transform: translate3d(12.00vw, -0.00vh, 0) scale(1.000); }
+  58.33% { transform: translate3d(11.20vw, 3.00vh, 0) scale(1.052); }
+  66.67% { transform: translate3d(9.00vw, 5.20vh, 0) scale(1.052); }
+  75.0% { transform: translate3d(6.00vw, 6.00vh, 0) scale(1.000); }
+  83.33% { transform: translate3d(3.00vw, 5.20vh, 0) scale(0.948); }
+  91.67% { transform: translate3d(0.80vw, 3.00vh, 0) scale(0.948); }
+  100.0% { transform: translate3d(0.00vw, 0.00vh, 0) scale(1.000); }
 }
-.glow-drift-a { animation: drift-a 20s ease-in-out infinite; will-change: transform, opacity; }
-.glow-drift-b { animation: drift-b 24s ease-in-out infinite; will-change: transform, opacity; }
-.glow-drift-c { animation: drift-c 18s ease-in-out infinite; will-change: transform; }
+.glow-drift-a { animation: drift-a 48s linear infinite; will-change: transform; }
+.glow-drift-b { animation: drift-b 54s linear infinite; will-change: transform; }
+.glow-drift-c { animation: drift-c 40s linear infinite; will-change: transform; }
+
+/* Scroll parallax: glows travel through the page as you scroll (--p: 0 to 1) */
+.glow-scroll-a { transform: translate3d(calc(var(--p, 0) * -18vw), calc(var(--p, 0) * 55vh), 0); will-change: transform; }
+.glow-scroll-b { transform: translate3d(calc(var(--p, 0) * 22vw), calc(var(--p, 0) * -45vh), 0); will-change: transform; }
+.glow-scroll-c { transform: translate3d(calc(var(--p, 0) * -30vw), calc(var(--p, 0) * 20vh), 0); will-change: transform; }
 
 /* Card border glow that follows the cursor (see NeonBorder) */
 .card-spotlight {
@@ -44,4 +83,5 @@ html { scroll-behavior: smooth; }
 
 @media (prefers-reduced-motion: reduce) {
   .glow-drift-a, .glow-drift-b, .glow-drift-c { animation: none; }
+  .glow-scroll-a, .glow-scroll-b, .glow-scroll-c { transform: none; }
 }
