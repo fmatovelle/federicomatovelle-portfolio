@@ -161,7 +161,7 @@ export default function Projects() {
           <Link
             key={p.slug ?? p.title}
             href={`/projects/${p.slug}`}
-            className="card-glow group relative overflow-hidden rounded-2xl border border-white/10 bg-black"
+            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black"
             {...spotlightHandlers()}
           >
             {/* Cover con gradiente y fix sub-pixeles */}

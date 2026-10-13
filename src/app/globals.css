@@ -40,21 +40,7 @@ html { scroll-behavior: smooth; }
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
 }
-.card-spotlight-fill {
-  opacity: 0;
-  transition: opacity 300ms ease;
-  background: radial-gradient(
-    420px circle at var(--cx, 50%) var(--cy, 50%),
-    rgba(140, 110, 255, 0.22),
-    transparent 60%
-  );
-}
-.group:hover .card-spotlight,
-.group:hover .card-spotlight-fill { opacity: 1; }
-
-/* Grid light around the cursor, only while a project card is hovered */
-.spotlight-layer { opacity: 0; transition: opacity 350ms ease; }
-html:has(.card-glow:hover) .spotlight-layer { opacity: 1; }
+.group:hover .card-spotlight { opacity: 1; }
 
 @media (prefers-reduced-motion: reduce) {
   .glow-drift-a, .glow-drift-b, .glow-drift-c { animation: none; }

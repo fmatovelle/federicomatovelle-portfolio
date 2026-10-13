@@ -16,25 +16,6 @@ export default function SiteBackground() {
           WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 60% 40%, #000 25%, transparent 80%)',
         }}
       />
-
-      {/* Light around the cursor, shown only while hovering a project card */}
-      <div
-        className="spotlight-layer absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(480px circle at var(--mx, 50%) var(--my, 50%), rgba(124,92,255,0.14), transparent 60%)',
-        }}
-      />
-      <div
-        className="spotlight-layer absolute inset-0"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px)',
-          backgroundSize: '48px 48px',
-          maskImage: 'radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), #000, transparent 75%)',
-          WebkitMaskImage: 'radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), #000, transparent 75%)',
-        }}
-      />
     </div>
   );
 }
