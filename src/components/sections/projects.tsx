@@ -1,6 +1,7 @@
 // src/components/sections/projects.tsx
 'use client';
 
+import SectionHeading from '@/components/ui/section-heading';
 import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -101,7 +102,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-10 sm:py-16">
-      <h2 className="text-xl font-semibold mb-6 tracking-widest">LATEST PROJECTS</h2>
+      <SectionHeading index="01" label="LATEST PROJECTS" />
 
       {/* Toolbar: búsqueda + tags + orden + contador */}
       <div className="mb-6 flex flex-col gap-3">

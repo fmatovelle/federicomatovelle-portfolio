@@ -1,9 +1,10 @@
+import SectionHeading from '@/components/ui/section-heading';
 import NeonBorder from '@/components/visual/neon-border';
 
 export default function Video() {
   return (
     <section id="video" className="py-10 sm:py-16">
-      <h2 className="text-xl font-semibold mb-6 tracking-widest">VIDEO</h2>
+      <SectionHeading index="02" label="VIDEO" />
       <div className="relative rounded-2xl overflow-hidden border border-white/10">
         {/* Reemplaza el src con tu Vimeo/YouTube */}
         <iframe

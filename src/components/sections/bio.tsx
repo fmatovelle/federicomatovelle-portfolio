@@ -1,4 +1,5 @@
 // src/components/sections/bio.tsx
+import SectionHeading from '@/components/ui/section-heading';
 import Image from 'next/image';
 import { SITE } from '@/lib/content';
 
@@ -16,7 +17,7 @@ export default function Bio() {
 
   return (
     <section id="bio" className="py-10 sm:py-16">
-      <h2 className="text-xl font-semibold mb-6 tracking-widest">BIO</h2>
+      <SectionHeading index="03" label="BIO" />
 
       <div className="grid md:grid-cols-3 gap-6 items-start">
         {/* Columna 1: Avatar */}

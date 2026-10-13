@@ -1,6 +1,7 @@
 // src/components/sections/contact.tsx
 'use client';
 
+import SectionHeading from '@/components/ui/section-heading';
 import { useState, FormEvent } from 'react';
 import {
   Mail,
@@ -48,7 +49,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-10 sm:py-16">
-      <h2 className="text-xl font-semibold mb-6 tracking-widest">CONTACT</h2>
+      <SectionHeading index="04" label="CONTACT" />
 
       <div className="grid md:grid-cols-2 gap-6">
         {/* FORMULARIO */}

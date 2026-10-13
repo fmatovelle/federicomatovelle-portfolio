@@ -7,6 +7,7 @@ import Footer from '@/components/layout/footer';
 import { baseMetadata } from '@/lib/seo';
 import { Analytics } from '@vercel/analytics/react';
 import { LoadingProvider } from '@/context/loading-context';
+import SiteBackground from '@/components/visual/site-background';
 
 const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = baseMetadata;
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.className} bg-black text-zinc-100 overflow-x-clip`}>
+        <SiteBackground />
         <LoadingProvider>
           <Header />
           <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
