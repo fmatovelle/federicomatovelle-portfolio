@@ -8,6 +8,9 @@ export function spotlightHandlers() {
       const r = e.currentTarget.getBoundingClientRect();
       e.currentTarget.style.setProperty('--cx', `${e.clientX - r.left}px`);
       e.currentTarget.style.setProperty('--cy', `${e.clientY - r.top}px`);
+      // page-level position for the grid light around the hovered card
+      document.documentElement.style.setProperty('--mx', `${e.clientX}px`);
+      document.documentElement.style.setProperty('--my', `${e.clientY}px`);
     },
   };
 }
