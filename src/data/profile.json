@@ -21,6 +21,21 @@
   "video_url": "https://www.youtube-nocookie.com/embed/u4xWH7tjCLM?rel=0&modestbranding=1",
   "projects": [
     {
+      "id": "p8",
+      "title": "WhatsApp AI Assistant",
+      "tags": [
+        "Node.js",
+        "OpenAI",
+        "Twilio",
+        "Firebase",
+        "Automation"
+      ],
+      "cover": "/projects/whatsapp-ai-assistant.jpg",
+      "year": 2025,
+      "slug": "whatsapp-ai-assistant",
+      "description": "AI receptionist on WhatsApp for a psychology clinic in Ecuador. Answers common questions instantly, hands complex conversations to GPT-4o-mini, captures appointment leads and alerts the clinic. Built on Firebase Functions with Firestore sessions and Twilio, plus a Cloudflare Workers version."
+    },
+    {
       "id": "p2",
       "title": "Rural Experience",
       "tags": [
