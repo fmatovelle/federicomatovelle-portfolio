@@ -1,7 +1,7 @@
 // src/components/sections/hero.tsx
 'use client';
 import { motion } from 'framer-motion';
-import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Download } from 'lucide-react';
 import { SITE } from '@/lib/content';
 import { GithubIcon, LinkedinIcon } from '@/components/ui/social-icons';
 
@@ -42,6 +42,25 @@ export default function Hero() {
             View projects
             <ArrowDown className="h-4 w-4" />
           </a>
+          <div className="inline-flex overflow-hidden rounded-full border border-violet-400/40 bg-violet-500/10 text-white/90">
+            <a
+              href="/cv/Federico-Matovelle-CV.pdf"
+              download
+              className="inline-flex items-center gap-2 px-5 py-2.5 transition hover:bg-violet-500/20"
+            >
+              <Download className="h-4 w-4" />
+              Download CV
+            </a>
+            <a
+              href="/cv/Federico-Matovelle-CV-ES.pdf"
+              download
+              title="Descargar CV en español"
+              aria-label="Descargar CV en español"
+              className="inline-flex items-center border-l border-violet-400/30 px-3.5 py-2.5 text-xs font-medium tracking-wider text-white/70 transition hover:bg-violet-500/20 hover:text-white"
+            >
+              ES
+            </a>
+          </div>
           <a
             href={SITE.github}
             target="_blank"
