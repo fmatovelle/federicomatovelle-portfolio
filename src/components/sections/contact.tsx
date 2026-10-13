@@ -95,7 +95,7 @@ export default function Contact() {
               id="message"
               name="message"
               required
-              placeholder="Tell me about your proyect…"
+              placeholder="Tell me about your project…"
               disabled={isLoading}
               className="rounded-xl border border-white/15 bg-transparent px-3 py-2 text-sm outline-none placeholder-white/40 focus:border-white/30 min-h-[120px] disabled:opacity-50"
             />

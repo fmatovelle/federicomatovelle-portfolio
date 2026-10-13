@@ -141,7 +141,7 @@ export default function Projects() {
               onClick={() => toggleTag(t)}
             />
           ))}
-          {(q || activeTags.size) && (
+          {(q.length > 0 || activeTags.size > 0) && (
             <button
               type="button"
               onClick={clearFilters}
@@ -181,9 +181,12 @@ export default function Projects() {
               )}
             </div>
 
-            <div className="p-4 flex items-center justify-between">
+            <div className="p-4 flex items-start justify-between gap-4">
               <div>
                 <h3 className="font-semibold">{p.title}</h3>
+                {p.description && (
+                  <p className="mt-1 text-sm text-white/60 line-clamp-2">{p.description}</p>
+                )}
                 <div className="mt-2 flex flex-wrap gap-2">
                   {(p.tags ?? []).slice(0, 4).map((t: string) => (
                     <span
@@ -195,7 +198,7 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-              <span className="text-xs text-white/60 flex items-center gap-2">
+              <span className="shrink-0 text-xs text-white/60 flex items-center gap-2">
                 {p.year}
                 <ArrowUpRight className="w-4 h-4 opacity-70 group-hover:opacity-100" />
               </span>

@@ -5,10 +5,10 @@ export default function JsonLD() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": SITE.owner ?? SITE.name ?? "Federico Matovelle",
-    "url": SITE.siteUrl ?? "https://federicomatovelle.vercel.app",
+    "url": SITE.siteUrl ?? "https://federicomatovelle.com",
     "email": `mailto:${SITE.email}`,
-    "sameAs": [SITE.instagram].filter(Boolean),
-    "jobTitle": "Front-End Developer",
+    "sameAs": [SITE.github, SITE.linkedin, SITE.instagram].filter(Boolean),
+    "jobTitle": "Full-Stack Developer",
   };
   return (
     <script

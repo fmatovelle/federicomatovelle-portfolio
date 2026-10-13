@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { SITE } from '@/lib/content';
+import { GithubIcon, LinkedinIcon } from '@/components/ui/social-icons';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,12 +45,33 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Desktop Instagram Link */}
+        {/* Desktop social links */}
+        <div className="hidden md:flex items-center gap-5">
+        <a
+          href={SITE.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          className="inline-flex items-center gap-2 text-xs text-white/70 hover:text-white"
+        >
+          <GithubIcon className="w-4 h-4" />
+          <span>GITHUB</span>
+        </a>
+        <a
+          href={SITE.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          className="inline-flex items-center gap-2 text-xs text-white/70 hover:text-white"
+        >
+          <LinkedinIcon className="w-4 h-4" />
+          <span>LINKEDIN</span>
+        </a>
         <a
           href={SITE.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center gap-2 text-xs text-white/70 hover:text-white"
+          className="inline-flex items-center gap-2 text-xs text-white/70 hover:text-white"
         >
           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/>
@@ -58,6 +80,7 @@ export default function Header() {
           </svg>
           <span>INSTAGRAM</span>
         </a>
+        </div>
 
         {/* Mobile Hamburger Button */}
         <button
@@ -88,7 +111,27 @@ export default function Header() {
               </Link>
             ))}
             
-            {/* Mobile Instagram Link */}
+            {/* Mobile social links */}
+            <a
+              href={SITE.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMobileMenu}
+              className="flex items-center gap-2 text-sm text-white/70 hover:text-white py-2"
+            >
+              <GithubIcon className="w-4 h-4" />
+              <span>GITHUB</span>
+            </a>
+            <a
+              href={SITE.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMobileMenu}
+              className="flex items-center gap-2 text-sm text-white/70 hover:text-white py-2"
+            >
+              <LinkedinIcon className="w-4 h-4" />
+              <span>LINKEDIN</span>
+            </a>
             <a
               href={SITE.instagram}
               target="_blank"

@@ -11,46 +11,39 @@
     ],
     "instagram": "https://www.instagram.com/federico.matovelle",
     "email": "fmatovelle1@gmail.com",
-    "siteUrl": "https://federicomatovelle.vercel.app",
+    "siteUrl": "https://federicomatovelle.com",
     "whatsapp": "34637738054",
-    "avatar": "/profile/federico.jpg"
+    "avatar": "/profile/federico.jpg",
+    "github": "https://github.com/fmatovelle",
+    "linkedin": "https://www.linkedin.com/in/fmatovelle/",
+    "summary": "I design and build web products end to end, from the first sketch to production, with React, Next.js, TypeScript and NestJS."
   },
   "video_url": "https://www.youtube-nocookie.com/embed/u4xWH7tjCLM?rel=0&modestbranding=1",
   "projects": [
     {
-      "id": "p1",
-      "title": "Star Wars Blog",
-      "tags": ["React", "Bootstrap", "API REST", "Front-end"],
-      "cover": "/projects/star-wars-blog.jpg",
-      "year": 2023,
-      "slug": "star-wars-blog",
-      "repo": "https://github.com/fmatovelle/StarWarsBlog",
-      "description": "Interactive blog that consumes a public Star Wars API and allows favorites."
-    },
-    {
       "id": "p2",
       "title": "Rural Experience",
-      "tags": ["React", "Flask", "API REST", "Full-stack"],
+      "tags": [
+        "React",
+        "Flask",
+        "API REST",
+        "Full-stack"
+      ],
       "cover": "/projects/rural-experience.jpg",
-      "year": 2023,
+      "year": 2024,
       "slug": "rural-experience",
       "repo": "https://github.com/fmatovelle/RuralExperience",
-      "description": "Platform for discovering tourist experiences in rural environments."
-    },
-    {
-      "id": "p3",
-      "title": "Bubi Crochet",
-      "tags": ["HTML5", "CSS3", "JavaScript", "Static Site"],
-      "cover": "/projects/bubi-crochet.jpg",
-      "year": 2023,
-      "slug": "bubi-crochet",
-      "repo": "https://github.com/fmatovelle/BubiCrochet",
-      "description": "Website for the Bubi Crochet crafts brand."
+      "description": "Vacation rental platform connecting travelers with unique rural accommodations in Spain, Portugal and France. React frontend with a Flask REST API."
     },
     {
       "id": "p4",
       "title": "Web Template 2",
-      "tags": ["HTML5", "CSS3", "Bootstrap", "Responsive"],
+      "tags": [
+        "HTML5",
+        "CSS3",
+        "Bootstrap",
+        "Responsive"
+      ],
       "cover": "/projects/web-template-2.jpg",
       "year": 2022,
       "slug": "web-template-2",
@@ -61,42 +54,80 @@
     {
       "id": "p5",
       "title": "MingaSEO",
-      "tags": ["WordPress", "SEO", "Branding"],
+      "tags": [
+        "WordPress",
+        "SEO",
+        "Branding"
+      ],
       "cover": "/projects/minga-seo.jpg",
       "year": 2025,
       "slug": "minga-seo",
       "live": "https://www.mingaseo.com/",
-      "description": "Corporate website for SEO services in Ecuador: services, projects, and contact information. Powered by WordPress and optimized on-page.."
+      "description": "Corporate website for an SEO agency in Ecuador, with services, projects and contact pages. Built on WordPress with on-page SEO optimization."
     },
     {
       "id": "p6",
       "title": "Web Template 3",
-      "tags": ["HTML5", "CSS3", "Bootstrap", "Responsive"],
+      "tags": [
+        "HTML5",
+        "CSS3",
+        "Bootstrap",
+        "Responsive"
+      ],
       "cover": "/projects/website_mockup.jpg",
       "year": 2025,
       "slug": "web-template-3",
       "repo": "https://github.com/fmatovelle/webtemplate-3",
-      "description": "Modern, responsive restaurant/business template with a strong hero, CTA, and clean structure to launch landing pages quickly.."
+      "description": "Modern, responsive restaurant/business template with a strong hero, CTA, and clean structure to launch landing pages quickly."
     },
     {
       "id": "p7",
       "title": "ChildSitter BCN",
-      "tags": ["React", "Firebase", "Service Platform", "Frontend"],
+      "tags": [
+        "React",
+        "Firebase",
+        "Service Platform",
+        "Front-end"
+      ],
       "cover": "/projects/childsitters_bcn.jpg",
       "year": 2025,
       "slug": "childsitter-bcn",
       "live": "https://childsitterbcn-fm.web.app",
-      "description": "Childcare platform in Barcelona connecting families with professional caregivers."
+      "description": "Childcare service platform for Barcelona families: professional caregivers for busy workdays, summer holidays and school pick-ups. Built with React and Firebase."
     }
   ],
   "gallery": [
-    { "image": "https://picsum.photos/seed/gal1/1000/1000", "alt": "Gallery 1" },
-    { "image": "https://picsum.photos/seed/gal2/1000/1000", "alt": "Gallery 2" },
-    { "image": "https://picsum.photos/seed/gal3/1000/1000", "alt": "Gallery 3" },
-    { "image": "https://picsum.photos/seed/gal4/1000/1000", "alt": "Gallery 4" },
-    { "image": "https://picsum.photos/seed/gal5/1000/1000", "alt": "Gallery 5" },
-    { "image": "https://picsum.photos/seed/gal6/1000/1000", "alt": "Gallery 6" },
-    { "image": "https://picsum.photos/seed/gal7/1000/1000", "alt": "Gallery 7" },
-    { "image": "https://picsum.photos/seed/gal8/1000/1000", "alt": "Gallery 8" }
+    {
+      "image": "https://picsum.photos/seed/gal1/1000/1000",
+      "alt": "Gallery 1"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal2/1000/1000",
+      "alt": "Gallery 2"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal3/1000/1000",
+      "alt": "Gallery 3"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal4/1000/1000",
+      "alt": "Gallery 4"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal5/1000/1000",
+      "alt": "Gallery 5"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal6/1000/1000",
+      "alt": "Gallery 6"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal7/1000/1000",
+      "alt": "Gallery 7"
+    },
+    {
+      "image": "https://picsum.photos/seed/gal8/1000/1000",
+      "alt": "Gallery 8"
+    }
   ]
 }
