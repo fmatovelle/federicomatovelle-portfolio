@@ -6,7 +6,7 @@ import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import NeonBorder from '@/components/visual/neon-border';
+import NeonBorder, { spotlightHandlers } from '@/components/visual/neon-border';
 import { PROJECTS } from '@/lib/content';
 import { useLoading } from '@/context/loading-context';
 
@@ -162,6 +162,7 @@ export default function Projects() {
             key={p.slug ?? p.title}
             href={`/projects/${p.slug}`}
             className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black"
+            {...spotlightHandlers()}
           >
             {/* Cover con gradiente y fix sub-pixeles */}
             <div className="relative w-full aspect-[16/10] bg-black overflow-hidden">
@@ -205,7 +206,7 @@ export default function Projects() {
               </span>
             </div>
 
-            <NeonBorder />
+            <NeonBorder spotlight />
           </Link>
         ))}
       </div>
