@@ -8,24 +8,21 @@ html { scroll-behavior: smooth; }
 
 /* ---------- Animated background ---------- */
 @keyframes drift-a {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-9vw, 12vh, 0) scale(1.12); }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  50% { transform: translate3d(-22vw, 28vh, 0) scale(1.25); opacity: 0.75; }
 }
 @keyframes drift-b {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(12vw, -10vh, 0) scale(0.9); }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate3d(28vw, -24vh, 0) scale(1.15); opacity: 1; }
 }
 @keyframes drift-c {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  33% { transform: translate3d(-7vw, -8vh, 0); }
-  66% { transform: translate3d(6vw, 5vh, 0); }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(-20vw, -16vh, 0) scale(1.2); }
+  66% { transform: translate3d(14vw, 12vh, 0) scale(0.9); }
 }
-.glow-drift-a { animation: drift-a 26s ease-in-out infinite; will-change: transform; }
-.glow-drift-b { animation: drift-b 32s ease-in-out infinite; will-change: transform; }
-.glow-drift-c { animation: drift-c 22s ease-in-out infinite; will-change: transform; }
-
-.site-bg .spotlight-layer { opacity: 0; transition: opacity 400ms ease; }
-.site-bg[data-spotlight='on'] .spotlight-layer { opacity: 1; }
+.glow-drift-a { animation: drift-a 12s ease-in-out infinite; will-change: transform, opacity; }
+.glow-drift-b { animation: drift-b 15s ease-in-out infinite; will-change: transform, opacity; }
+.glow-drift-c { animation: drift-c 10s ease-in-out infinite; will-change: transform; }
 
 /* Card border glow that follows the cursor (see NeonBorder) */
 .card-spotlight {
@@ -57,5 +54,4 @@ html { scroll-behavior: smooth; }
 
 @media (prefers-reduced-motion: reduce) {
   .glow-drift-a, .glow-drift-b, .glow-drift-c { animation: none; }
-  .site-bg .spotlight-layer { display: none; }
 }
