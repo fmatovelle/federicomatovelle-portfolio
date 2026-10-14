@@ -21,6 +21,21 @@
   "video_url": "https://www.youtube-nocookie.com/embed/u4xWH7tjCLM?rel=0&modestbranding=1",
   "projects": [
     {
+      "id": "p8",
+      "title": "WhatsApp AI Assistant",
+      "tags": [
+        "TypeScript",
+        "Firebase",
+        "WhatsApp Cloud API",
+        "OpenAI"
+      ],
+      "cover": "/projects/whatsapp-ai-assistant.jpg",
+      "year": 2026,
+      "slug": "whatsapp-ai-assistant",
+      "live": "https://whatsapp-ai-assistant-98fac.web.app",
+      "description": "Multi-client WhatsApp assistant for small businesses, built for Prisma Branding. It answers with each business's saved replies first and AI as fallback, alerts the owner about leads and lets them control it from WhatsApp. Runs on the official Cloud API with Firebase, encrypted tokens and GDPR-friendly data retention. It can also share the number with the owner's WhatsApp Business app."
+    },
+    {
       "id": "p2",
       "title": "Rural Experience",
       "tags": [
